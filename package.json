@@ -1,0 +1,32 @@
+{
+  "name": "tdd-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "dev": "nodemon src/server.js --ignore __tests__",
+    "test": "NODE_ENV=test jest",
+    "pretest": "NODE_ENV=test sequelize db:migrate",
+    "posttest": "NODE_ENV=test sequelize db:migrate:undo:all"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.4",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "factory-girl": "^5.0.4",
+    "faker": "^4.1.0",
+    "jsonwebtoken": "^8.5.0",
+    "mysql2": "^1.6.5",
+    "sequelize": "^4.42.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-google": "^0.12.0",
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.10",
+    "sequelize-cli": "^5.4.0",
+    "sqlite3": "^4.0.6",
+    "supertest": "^3.4.2"
+  }
+}
